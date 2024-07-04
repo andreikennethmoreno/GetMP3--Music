@@ -1,0 +1,85 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="container mt-3 col-xl-5 col-lg-8 col-12">
+
+
+    <form class="my-5 pt-3" action="/searchSong"  method="post" onsubmit="showLoadingScreen()">
+        <h5>Search Youtube: </h5>
+        <div class="d-flex justify-content-end" >
+            <input type="text" class="form-control me-2" id="userSearch" name="userSearch" placeholder="Lupang Hinirang" aria-label="Text input">
+            <button class="btn btn-primary"  type="submit">Search</button>
+        </div>
+
+    </form>
+
+    <% songSearchList.forEach(songSearch=> { %>
+        <div class="card border shadow-none">
+            <div class="card-body d-flex align-items-start pb-3">
+                <div class="me-4">
+                    <img src="<%= songSearch.thumbnail %>" alt="" class="thumbnail">
+                </div>
+                <div class="flex-grow-1 align-self-center overflow-hidden">
+                    <div>
+                        <h5 class="text-truncate font-size-18"><%= songSearch.title %></h5>
+                        <p class="mb-0 mt-1"><b><%= songSearch.duration %></b></p>
+                    </div>
+                </div>
+                <div class="flex-shrink-0 ms-2">
+                    <ul class="list-inline mb-0 font-size-16">
+                        <li class="list-inline-item">
+                            
+
+                            <form action="/convert" method="POST" onsubmit="showLoadingScreen()">
+                                <input type="text" id="ytLink" name="ytLink" value="<%= songSearch.url %>" class="d-none">
+                                <input class="btn  btn-outline-primary" type="submit" value="Convert">
+                            </form>
+
+
+                            <div id="loadingScreen" >
+
+                                <div class="text-center">
+                                  <h2 id="load-text"></h2>
+                          
+                                    <div id="spinner"  role="status">
+                          
+                                    </div>
+                                </div>
+                              </div>
+                          
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<% }); %>
+
+
+    <div id="loadingScreen" >
+        <div class="text-center">
+          <h2 id="search-text"></h2>
+            <div id="spinner"  role="status">
+            </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    
+
+
+
+</div>
+
+
+
+
+    
+    
+     
+ 
+ 
+
+    
+<%- include("partials/footer.ejs") %>

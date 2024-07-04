@@ -1,0 +1,48 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="container mt-3 col-xl-5 col-lg-8 col-12" >
+
+  
+  <form class="my-5 pt-3" action="/convert" method="POST" onsubmit="showLoadingScreen()">
+    <h5>Input valid Youtube video Link: </h5>
+    <div class="d-flex justify-content-end" >
+        <input type="text" class="form-control me-2" id="ytLink" name="ytLink" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" aria-label="Text input">
+        <button class="btn btn-primary"  type="submit">Convert</button>
+    </div>
+
+</form>
+
+  <div class="how-to">
+    <h5 class="text-center"> How to download YouTube videos? </h5>
+    <ol>
+      <li>Open YouTube.com and search for the video you would like to download.</li>
+
+      <li>When you find the video, click on it and wait until it starts playing. Then, just copy the video URL from your browser address bar.</li>
+      
+      <li> Open GetMP3 and paste the video URL in our converter. </li>
+      
+      <li>Then, simply click on the „Convert” button. The conversion will be initiated, and may take a few minutes. We will try to convert the video in the best available quality. But be aware that it is only possible to download videos that are up to 90 minutes long, to guarantee that the conversion will be done within a few minutes.</li>
+    
+      <li>As soon as the conversion of the video is completed you will see a „Download” button. Just click on it, and the download shall start.</li>
+    </ol>
+  </div>
+
+
+
+    <div id="loadingScreen" >
+      <div class="text-center">
+        <h2 id="load-text"></h2>
+          <div id="spinner"  role="status">
+          </div>
+      </div>
+    </div>
+
+  
+
+
+</div>
+
+
+
+<%- include("partials/footer.ejs") %>

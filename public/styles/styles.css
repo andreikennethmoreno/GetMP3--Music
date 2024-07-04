@@ -1,0 +1,42 @@
+.btn-block {
+  width: 100%;
+  border-radius: 30px;
+}
+
+
+#d-none {
+  text-decoration: none;
+}
+
+a {
+  color: #caf0f8;
+}
+
+a:hover, a:focus {
+  color: #0082d8;
+}
+
+
+/* Style for the loading screen */
+.loadingScreen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 9999;
+}
+
+
+.thumbnail {
+  width: 128px; 
+  height: 72px;
+  object-fit: cover; /* This will make sure the image covers the entire container without stretching */
+}
+
+.how-to li {
+  margin: 2rem 0 2rem 0;
+}
